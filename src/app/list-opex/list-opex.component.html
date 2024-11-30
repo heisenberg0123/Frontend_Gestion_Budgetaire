@@ -1,0 +1,287 @@
+
+<link rel="stylesheet" href="list-opex.component.css">
+<body id="page-top">
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar" >
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" >
+        <div class="sidebar-brand-icon">
+          <img src="assets/img/logo/logo.png">
+        </div>
+        <div class="sidebar-brand-text mx-3   ff">Attijari Bank</div>
+      </a>
+      <hr class="sidebar-divider my-0">
+      <li class="nav-item active">
+        <a class="nav-link" (click)="goTohome()">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard </span></a>
+      </li>
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+        Features
+      </div>
+      <li class="nav-item" [hidden]="q">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
+          aria-controls="collapseTable">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Projets</span>
+        </a>
+        <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Projets</h6>
+            <a class="collapse-item" (click)="goToprojet()">Capex</a>
+            <a class="collapse-item" (click)="goToproject()">Opex</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"(click)="goTolistecapex()">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Capex</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"(click)="goTolisteopex()">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Opex</span>
+        </a>
+      </li>
+    
+    
+    
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
+        aria-controls="collapseForm">
+        <i class="fab fa-fw fa-wpforms"></i>
+        <span>Bon de Commande</span>
+      </a>
+      <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">Bon de Commande</h6>
+          <a class="collapse-item" (click)="goTolistbondecommande()">capex</a>
+          <a class="collapse-item" (click)="goTolistbondecommandeo()">Opex</a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
+        aria-expanded="true" aria-controls="collapseBootstrap">
+        <i class="fab fa-fw fa-wpforms"></i>
+        <span>Factures</span>
+      </a>
+      <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">Factures</h6>
+          <a class="collapse-item" (click)="goTolistfactures()"> Capex</a>
+          <a class="collapse-item" (click)="goTolistfactureso()">Opex</a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item" [hidden]="verif">
+      <a class="nav-link"(click)="goTolisteutilisateur() ">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Utilisateurs</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"(click)="analyse() ">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Analyse</span>
+      </a>
+    </li>
+      <hr class="sidebar-divider">
+      <hr class="sidebar-divider">
+      <div class="version" id="version-ruangadmin"></div>
+    </ul>
+    <!-- Sidebar -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <!-- TopBar -->
+        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
+         
+          <ul class="navbar-nav ml-auto">
+           
+          
+          
+         
+            <div class="topbar-divider d-none d-sm-block"></div>
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <img class="img-profile rounded-circle" src="assets/img/boy.png" style="max-width: 60px">
+                <span class="ml-2 d-none d-lg-inline text-white small"> {{nom}}</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal" (click)="logout()">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <!-- Topbar -->
+
+        <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Liste Opex</h1>
+            <button  mat-raised-button (click)="exportexcel()">Exporte</button>
+
+            
+          </div>
+
+          <div class="row mb-3">
+            <!-- Earnings (Monthly) Card Example -->
+            
+            <!-- Earnings (Annual) Card Example -->
+           
+           
+            <!-- New User Card Example -->
+           
+            <!-- Pending Requests Card Example -->
+           
+            <!-- Area Chart -->
+          
+              
+                
+                <div class="card-body">
+                  <div class="card-body">
+                    <div class="search-container">
+                   
+                       <button mat-raised-button (click)="openopex()"style="margin-left: 1100px;" [hidden]="v">Ajouter </button>
+
+                      
+                    </div>
+                    <input style="display: flex;
+                    justify-content: flex-start;
+                    margin-top: 20px;
+                    margin-left: 20px;
+                    border: 1px;
+                    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    background-color: #b4b4bd;  " type="text" [(ngModel)]="searchTerm" (input)="filterData()" placeholder="Recherche">
+                       <br> <br><br>       
+                <table  class="table align-items-center table-flush"   id="table"  >
+                  <thead class="thead-light">
+                  <tr>
+                    
+                    <th scope="col">Libellée Projet</th>
+                    <th scope="col">Code</th>
+                    <th scope="col">Rubrique</th>
+                    <th scope="col">Libellée Article</th>
+                    <th scope="col">Rubrique Principale</th>
+                    <th scope="col">Sous-Rubrique</th>
+           
+                    <th scope="col">Code Jira</th>
+                    <th scope="col">Budget initial</th>
+                    <th scope="col">Total Budget</th>
+                    <th scope="col">Code cg</th>
+                    <th scope="col">extension</th>
+                    <th scope="col">diminution</th>
+                    <th scope="col">devise</th>
+                
+                    <th scope="col">Actions</th>
+
+                    
+                  </tr>
+                </thead>
+             
+             <tbody >
+           
+                  <tr *ngFor="let i of opex">
+               
+                    <td  >{{i.libelleProjet}}</td>
+                    <td>{{i.code}}</td>
+                    <td>{{i.rubrique}}</td>
+                    <td>{{i.libelleArticle}}</td>
+                    <td>{{i.rubriquePrincipale}}</td>
+                    <td>{{i.sousRubrique}}</td>
+                    <td>{{i.codeJira}}</td>
+                    <td>{{i.budgetInitiale}}</td>
+                    <td>{{i.totalbudget}}</td>
+                    <td>{{i.codecg}}</td>
+                    <td>{{i.extension}}</td>
+                    <td>{{i.diminution}}</td>
+                    <td>{{i.devise}}</td>
+             
+
+                    <td>
+                      <button mat-icon-button color="primary" (click)="toupdate(i.id)" [hidden]="v"><span class="material-symbols-outlined">
+                        <mat-icon>edit</mat-icon>
+                        </span></button>
+                    
+                        <button  mat-icon-button color="warn" (click)="openDeleteProductDialog(i.id)" [hidden]="v" ><span class="material-symbols-outlined">
+                          <mat-icon>delete</mat-icon>
+                           </span>
+                       </button>
+                       <ng-template #deleteCapex class="f">
+                         <button mat-icon-button class="btn btn-danger" (click)="closeDialog()"><mat-icon>close</mat-icon></button>
+     
+                         <h2  class="f" style="text-align: center;">est-ce-que vous étes sur de supprimer cette Opex !</h2>
+                         <table class="table container" #pdfTable>
+                           <th scope="col">Libellée Projet</th>
+                           <td>{{fact[0]?.libelleProjet}}</td>
+                           <button  class="btn btn-danger" style="margin-left: 35%;"  (click)="delete(fact[0].id)">Oui</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                           <button class="btn btn-secondary"  (click)="closeDialog()">Non</button>
+     
+                         </table>
+     
+                       </ng-template>
+                         </td>
+                  </tr>
+                </tbody>
+                </table>
+                
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+</mat-paginator>
+                
+         
+                  <div class="chart-area">
+                    <canvas id="myAreaChart"></canvas>
+                  </div>
+                </div>
+             
+            
+            </div>
+          <!-- Modal Logout -->
+          <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Are you sure you want to logout?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
+                  <a href="login.html" class="btn btn-primary">Logout</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!---Container Fluid-->
+      </div>
+      <!-- Footer -->
+    
+      <!-- Footer -->
+    </div>
+  </div>
+
+  <!-- Scroll to top -->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  
+
+
+

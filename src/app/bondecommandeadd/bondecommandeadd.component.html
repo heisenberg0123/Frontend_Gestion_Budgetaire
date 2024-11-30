@@ -1,0 +1,131 @@
+<!doctype html>
+<link rel="stylesheet" href="bondecommandeadd.component.css">
+<body id="page-top" style="width: 500px;">
+  <div id="wrapper">
+    <!-- Sidebar -->
+    
+    <!-- Sidebar -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <!-- TopBar -->
+    
+        <!-- Topbar -->
+
+        <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+           
+            
+          </div>
+
+          <div class="row mb-3">
+            <!-- Earnings (Monthly) Card Example -->
+          
+            <!-- Earnings (Annual) Card Example -->
+           
+            <!-- New User Card Example -->
+           
+            <!-- Pending Requests Card Example -->
+
+
+            <!-- Area Chart -->
+            <div class="col-xl-12 col-lg-7">
+              <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Ajouter bon de commande</h6>
+                
+                
+                  <div class="dropdown no-arrow">
+                    
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                      aria-labelledby="dropdownMenuLink">
+                     
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <form [formGroup]="form">
+                    <mat-form-field appearance="outline"  style="margin-left: 90px;">
+                      <mat-label>Ref</mat-label>
+                      <input matInput formControlName="ref">
+                    </mat-form-field>
+              <br>
+  <br>
+
+  <mat-form-field appearance="outline"  style="margin-left: 90px;">
+    <mat-label> Capex</mat-label>
+    <mat-select formControlName="c">
+      <mat-option  *ngFor="let i of Capex" [value]=i.id >{{i.libelleProjet}}</mat-option></mat-select></mat-form-field>
+<br>
+      <br>
+      <mat-form-field appearance="outline"  style="margin-left: 90px;">
+        <mat-label>Engagé</mat-label>
+        <input matInput formControlName="engage">
+      </mat-form-field><br>
+      <br>
+      <mat-form-field appearance="outline"  style="margin-left: 90px;">
+        <mat-label>Fournisseur</mat-label>
+        <input matInput formControlName="fournisseur">
+      </mat-form-field><br>
+
+  
+<br><br>
+  
+
+      <div class="button-container" style="margin-right: 150px;">
+        <button class="button1" (click)="ajouter()">Envoyer</button>
+        <button mat-raised-button type="button" [mat-dialog-close]="false" >Annuler </button>
+      </div>
+  
+</form>
+
+                  <div class="chart-area">
+                    <canvas id="myAreaChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          <!-- Modal Logout -->
+          <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Are you sure you want to logout?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
+                  <a href="login.html" class="btn btn-primary">Logout</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!---Container Fluid-->
+      </div>
+      <!-- Footer -->
+      
+      <!-- Footer -->
+    </div>
+  </div>
+
+  <!-- Scroll to top -->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  
+</body>
+

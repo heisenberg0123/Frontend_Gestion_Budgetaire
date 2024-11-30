@@ -1,0 +1,218 @@
+
+<link rel="stylesheet" href="admin-add-capex.component.css">
+<body id="page-top" style="height: 900px; width: 600px;" >
+  <div id="wrapper" style="height: 700px;">
+    <!-- Sidebar -->
+    
+    <!-- Sidebar -->
+    <div id="content-wrapper" class="d-flex flex-column"style="height: 900px;">
+      <div id="content" style="height: 700px;">
+        <!-- TopBar -->
+     
+        <!-- Topbar -->
+
+        <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper" style="height: 900px;">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4" >
+           
+            
+          </div>
+
+          <div class="row mb-3"  style="height: 700px;">
+            <!-- Earnings (Monthly) Card Example -->
+            
+            
+            <!-- Earnings (Annual) Card Example -->
+            
+            
+            <!-- New User Card Example -->
+            
+            <!-- Pending Requests Card Example -->
+       
+             
+
+            <!-- Area Chart -->
+            <div class="col-xl-12 col-lg-7" style="height: 900px;">
+              <div class="card mb-4"style="height: 900px;">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between" style="height: 500px;">
+                  <h6 class="m-0 font-weight-bold text-primary">Ajouter Capex</h6>
+                  <div class="dropdown no-arrow">
+                  
+                    <div>
+                        
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                      aria-labelledby="dropdownMenuLink">
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                    <fieldset>
+                      <div *ngIf="errormsg" class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>{{errormsg}}</strong> 
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>
+            <form [formGroup]="form" (ngSubmit)="saa()">
+           <table border="0px">  
+            <tr>  
+            <td><mat-form-field appearance="outline">
+              <mat-label>libelleProjet</mat-label>
+              <input matInput formControlName="libelleProjet">
+            </mat-form-field>
+            </td><td>
+              <td style="margin-left: 900px;">
+                <mat-form-field appearance="outline" style="margin-left: 20px;">
+                  <mat-label>Code</mat-label>
+                  <input matInput formControlName="code">
+                </mat-form-field>
+            </td></tr><tr>
+            <td> <mat-form-field appearance="outline">
+              <mat-label>code Cg</mat-label>
+              <input matInput formControlName="codecg">
+            </mat-form-field></td><td></td>
+            <td><mat-form-field appearance="outline" style="margin-left: 20px;">
+              <mat-label>libelleArticle</mat-label>
+              <input matInput formControlName="libelleArticle">
+            </mat-form-field>
+            </td></tr><tr>
+            
+            
+                <td>
+                
+                <mat-form-field appearance="outline" >
+                  <mat-label>Rubrique Principal</mat-label>
+                  <mat-select formControlName="rubriquePrincipale">
+                    <mat-option value="Projet Métier">Projet Métier</mat-option>
+                    <mat-option value="équipement et infrastructure">Equipement et infrastructure</mat-option>
+                    <mat-option value="Assistances et accompagnement">Assistances et accompagnement</mat-option>
+                    <mat-option value="Assistances et accompagnement">Projet et sécurité</mat-option>
+                  </mat-select>
+                </mat-form-field></td><td></td>
+                  <td><mat-form-field appearance="outline" style="margin-left: 20px;">
+                    <mat-label>Sous Rubrique</mat-label>
+                    <mat-select formControlName="sousRubrique">
+                      <mat-option value="Hardware">Hardware</mat-option>
+                      <mat-option value="Software">Software</mat-option>
+                      <mat-option value="Service">Service</mat-option>
+                     
+                    </mat-select>
+                  </mat-form-field></td></tr><tr>
+                    
+                    <td><mat-form-field appearance="outline">
+                      <mat-label>Rubrique</mat-label>
+                      <input matInput formControlName="rubrique">
+                    </mat-form-field>
+                    </td><td></td>
+                    <td><mat-form-field appearance="outline" style="margin-left: 20px;">
+                      <mat-label>Code jira</mat-label>
+                      <input matInput formControlName="codeJira">
+                    </mat-form-field>
+   
+                </td></tr><tr>
+                       
+
+    
+
+		    <td><mat-form-field appearance="outline">
+          <mat-label>Budget Intiale</mat-label>
+          <input matInput formControlName="budgetInitiale">
+        </mat-form-field>
+         </td><td></td>
+		
+           <td><mat-form-field appearance="outline" style="margin-left: 20px;">
+            <mat-label>Extension</mat-label>
+            <input matInput formControlName="extension">
+          </mat-form-field>
+          </td></tr><tr>
+          <td><mat-form-field appearance="outline">
+            <mat-label>Diminution</mat-label>
+            <input matInput formControlName="diminution">
+          </mat-form-field>
+               </td><td></td>
+           <td> <mat-form-field appearance="outline" style="margin-left: 20px;">
+            <mat-label>Taxe</mat-label>
+            <input matInput formControlName="Taxe">
+          </mat-form-field>
+             </td>
+              </tr>
+              <tr><td>
+                <mat-form-field appearance="outline">
+                  <mat-label>Devise</mat-label>
+                  <mat-select formControlName="devise">
+                    <mat-option value="TND">TND</mat-option>
+                    <mat-option value="UST">UST</mat-option>
+                    <mat-option value="EURO">EURO</mat-option>
+                   
+                  </mat-select>
+                </mat-form-field></td><td></td>
+          <td><mat-form-field appearance="outline" style="margin-left: 20px;">
+            <mat-label>Taux</mat-label>
+            <input matInput formControlName="Taux">
+          </mat-form-field>
+             </td></tr><tr>
+           <td>
+            <div class="button-container">
+              <button class="button3" (click)="calcul()">Total</button></div>
+          
+           <p formControlName="totalbudget" >{{k}}</p></td>
+            </tr>
+            
+            <tr>    
+                <td></td></tr>
+              <tr> <td></td></tr>
+               <tr><td></td></tr> <tr>
+                <td>
+            <div class="button-container">
+                <button class="button1" (click)="ajouter()">ُEnvoyer</button>
+                <button mat-raised-button type="button" [mat-dialog-close]="false" >Annuler </button>
+              </div>
+            </td>
+              <br></tr><br>
+            </table>
+          </form>
+         </fieldset>
+                  <div class="chart-area">
+                    <canvas id="myAreaChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          <!-- Modal Logout -->
+          <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Are you sure you want to logout?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
+                  <a href="login.html" class="btn btn-primary">Logout</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!---Container Fluid-->
+      </div>
+      <!-- Footer -->
+     
+      <!-- Footer -->
+    </div>
+  </div>
+
+  <!-- Scroll to top -->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  
+</body>

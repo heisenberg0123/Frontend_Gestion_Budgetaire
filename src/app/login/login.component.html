@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Page de connexion</title>
+    <link rel="stylesheet" href="login.component.css">
+  </head>
+  <body>
+    <br><br><br>
+    <div class="login-container">
+       <div class="con"> <img src="assets\img\logo\logo1.png" alt="">
+        <br><br><br></div>
+      <form [formGroup]="form">
+        <label for="Matricule"  >E-mail :</label>
+        <input type="email" placeholder="Entrez votre E-mail Attijari"  required  formControlName="email">
+        <label for="password">Mot de passe :</label>
+        <input type="password"  placeholder="Entrez votre Mot de passe" required formControlName="password">
+       
+   <br><br>
+
+    
+        <button type="submit" (click)="login()" >Se connecter</button>
+        <br><br><br>
+      </form>
+      
+    </div>
+    <div>
+      <br><br><br>
+    </div>
+      
+    <script src="script.js"></script>
+  </body>
+</html>

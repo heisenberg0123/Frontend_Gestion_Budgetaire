@@ -1,0 +1,35 @@
+.search-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+    margin-left: 20px;
+    border: 1px;
+  }
+  
+  .search-container input[type=text] {
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .search-container button[type=submit] {
+    padding: 10px 20px;
+    background-color: #1635e4;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    border: none;
+    
+  }
+  
+  .search-container button[type=submit]:hover {
+    background-color: #1f0fd3;
+  }
+
+
+  .ff{
+    color: white;
+  }
+  .f{
+    height: 150px;
+    width: 700px;
+    }

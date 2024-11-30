@@ -1,0 +1,76 @@
+body{
+    background-image: url("src\assets\img\logo\fond2.jpg");
+    background-size: 120%;
+    background-repeat: no-repeat;
+}
+.login-container {
+    margin:auto;
+    width: 25%;
+    padding: 100px;
+    border: 5px solid #ddd;
+    border-radius: 10px;
+    align-content: 1px;
+    background-color: rgb(255, 255, 251);
+    height: 700px;
+    width: 600px;
+    
+  }
+  .con{
+    text-align: center;
+    align-items: center;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    
+
+  }
+  
+  label {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  select {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.2rem;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #f90;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  footer {
+    margin: -75px;
+    background-color: #f8f8f8;
+    color: #5f5d5d;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 105%;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+
+  

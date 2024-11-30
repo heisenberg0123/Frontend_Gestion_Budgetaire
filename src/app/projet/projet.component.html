@@ -1,0 +1,246 @@
+<link rel="stylesheet" href="projet.component.css">
+<body id="page-top">
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" >
+        <div class="sidebar-brand-icon">
+          <img src="assets/img/logo/logo.png">
+        </div>
+        <div class="sidebar-brand-text mx-3  ff">Attijari Bank</div>
+      </a>
+      <hr class="sidebar-divider my-0">
+      <li class="nav-item active">
+        <a class="nav-link"(click)=" goTohome()">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard </span></a>
+      </li>
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+        Features
+      </div>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
+          aria-controls="collapseTable">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Projets</span>
+        </a>
+        <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Projets</h6>
+            <a class="collapse-item" (click)="goToprojet()">Capex</a>
+            <a class="collapse-item" (click)="goToproject()">Opex</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"(click)="goTolistecapex()">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Capex</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"(click)="goTolisteopex()">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Opex</span>
+        </a>
+      </li>
+    
+    
+    
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
+        aria-controls="collapseForm">
+        <i class="fab fa-fw fa-wpforms"></i>
+        <span> Bon de Commande</span>
+      </a>
+      <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">Bon de Commande</h6>
+          <a class="collapse-item" (click)="goTolistbondecommande()">capex</a>
+          <a class="collapse-item" (click)="goTolistbondecommandeo()">Opex</a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
+        aria-expanded="true" aria-controls="collapseBootstrap">
+        <i class="fab fa-fw fa-wpforms"></i>
+        <span>Factures</span>
+      </a>
+      <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">Factures</h6>
+          <a class="collapse-item" (click)="goTolistfactures()"> Capex</a>
+          <a class="collapse-item" (click)="goTolistfactureso()">Opex</a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item" [hidden]="verif">
+      <a class="nav-link"(click)="goTolisteutilisateur() ">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Utilisateurs</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"(click)="analyse() ">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Analyse</span>
+      </a>
+    </li>
+      <hr class="sidebar-divider">
+      <hr class="sidebar-divider">
+      <div class="version" id="version-ruangadmin"></div>
+    </ul>
+    <!-- Sidebar -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <!-- TopBar -->
+        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
+         
+          <ul class="navbar-nav ml-auto">
+           
+          
+          
+         
+            <div class="topbar-divider d-none d-sm-block"></div>
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <img class="img-profile rounded-circle" src="assets/img/boy.png" style="max-width: 60px">
+                <span class="ml-2 d-none d-lg-inline text-white small">{{nom}}</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal" (click)="logout()">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <!-- Topbar -->
+
+        <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Liste Projets Capex</h1>
+            
+          </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+         
+            <!-- Earnings (Annual) Card Example -->
+          
+            <!-- New User Card Example -->
+          
+            <!-- Pending Requests Card Example -->
+          
+
+            <!-- Area Chart -->
+            
+                  <div class="dropdown no-arrow">
+                 
+                    <div>
+                        
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                      aria-labelledby="dropdownMenuLink">
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                    <fieldset>
+                      <div class="search-container">
+                        
+                      </div>
+                      
+<br> <br><br>      
+
+
+
+
+
+<table class="table align-items-center table-flush"  id="excel-table"  >
+  <thead class="thead-light">
+    <tr>
+                    <th scope="col">Libellée Projet</th>
+                    <th scope="col">sous Rubrique</th>
+                    <th scope="col">budget total</th>
+                    <th scope="col">engage</th>
+                    <th scope="col">realise</th>
+                  </tr>
+                </thead>
+
+
+
+                <tbody class="table-group-divider">
+                 
+                  <tr *ngFor="let i of Projects">
+                    
+                    <td>{{i?.capex?.libelleProjet}}</td>
+                    <td>{{i?.capex?.sousRubrique}}</td>
+                    <td>{{i?.capex?.totalbudget}}</td>
+                    <td>{{i?.bondecommande?.engage}}</td>
+                    <td>{{i?.factures?.realise}}</td>
+
+
+                  
+
+                  </tr>
+                 
+                </tbody>
+
+              </table>
+
+
+         </fieldset>
+
+
+
+
+                  <div class="chart-area">
+                    <canvas id="myAreaChart"></canvas>
+                  </div>
+                </div>
+          
+          <!-- Modal Logout -->
+          <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Are you sure you want to logout?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
+                  <a href="login.html" class="btn btn-primary">Logout</a>
+                </div>
+              </div>
+            </div>
+          
+
+        </div>
+        <!---Container Fluid-->
+      </div>
+      <!-- Footer -->
+ 
+      <!-- Footer -->
+    </div>
+  </div>
+
+  <!-- Scroll to top -->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  
+</body>
+

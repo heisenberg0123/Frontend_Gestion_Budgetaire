@@ -1,0 +1,57 @@
+{
+    "accounts":{
+        "email":"omar@gmail.com",
+        "password":"123456789",
+        "data":[
+            {
+            "role":"admin"
+            }
+        ]
+    },
+    "capex":[
+        {
+            "label":"sasas",
+            "code":"51654",
+            "code_cg":"15894",
+            "libelle_article":"fafafaf",
+            "rubrique_prin":"axaxaax",
+            "sous_rubrique":"sasas",
+            "rubrique":"dadad",
+            "code_jira":"fafafaf",
+            "budget_initsial":"189",
+            "tot_budget":"4454",
+            "commentaire":"zdzdzdzd"
+            
+        },
+        {
+            "label":"sasas",
+            "code":"51654",
+            "code_cg":"15894",
+            "libelle_article":"fafafaf",
+            "rubrique_prin":"axaxaax",
+            "sous_rubrique":"sasas",
+            "rubrique":"dadad",
+            "code_jira":"fafafaf",
+            "budget_initsial":"189",
+            "tot_budget":"4454",
+            "commentaire":"zdzdzdzd"
+            
+        },
+        {
+            "label":"sasas",
+            "code":"51654",
+            "code_cg":"15894",
+            "libelle_article":"fafafaf",
+            "rubrique_prin":"axaxaax",
+            "sous_rubrique":"sasas",
+            "rubrique":"dadad",
+            "code_jira":"fafafaf",
+            "budget_initsial":"189",
+            "tot_budget":"4454",
+            "commentaire":"zdzdzdzd"
+            
+        }
+    ]
+        
+    
+}

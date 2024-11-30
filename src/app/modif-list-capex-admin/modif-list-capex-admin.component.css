@@ -1,0 +1,142 @@
+
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="text"] {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  
+  label {
+    font-weight: bold;
+  }
+  
+  select {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #cccccc56;
+  }
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  nav a {
+    color: #fff;
+    font-weight: bold;
+    text-align: Right;
+  }
+  
+  aside {
+    float: left;
+    width: 200px;
+    background-color: #0a0a0a71;
+    padding:20px;
+    margin:20px;
+    height: 650px;
+    float: inline-end;
+  }
+  
+  aside ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  aside li {
+    margin-bottom: 10px;
+  }
+  
+  aside a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  section {
+    margin-left: 220px;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+.social-icons {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end
+}
+.social-icons li {
+    margin: 0 5px;
+}
+
+.social-icons a {
+    color: #fff;
+}
+
+.social-icons a:hover {
+    color: #ccc;
+}
+
+.fa {
+    font-size: 18px;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .button1, .button2 {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+    margin: 10px;
+  }
+  
+  .button1:hover {
+    background-color: green;
+  }
+  
+  .button2:hover {
+    background-color: red;
+  }
+  .table{
+align-items: center;
+  }
+  .row {
+ display:flex;
+ gap:10px;
+  }
+  .content{
+    padding-top: 10px;
+  }
+  mat-form-field{
+    width:100%;
+  }

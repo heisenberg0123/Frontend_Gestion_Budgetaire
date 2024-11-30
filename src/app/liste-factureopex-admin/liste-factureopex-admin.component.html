@@ -1,0 +1,352 @@
+
+<link rel="stylesheet" href="liste-factureopex-admin.component.css">
+<body id="page-top">
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar" >
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon">
+          <img src="assets/img/logo/logo.png">
+        </div>
+        <div class="sidebar-brand-text mx-3">Attijari Bank</div>
+      </a>
+      <hr class="sidebar-divider my-0">
+      <li class="nav-item active">
+        <a class="nav-link" (click)="goTohome()">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard </span></a>
+      </li>
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+        Features
+      </div>
+      <li class="nav-item"  [hidden]="q">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
+          aria-controls="collapseTable">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Projets</span>
+        </a>
+        <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Projets</h6>
+            <a class="collapse-item" (click)="goToprojet()">Capex</a>
+            <a class="collapse-item" (click)="goToproject()">Opex</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"(click)="goTolistecapex()">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Capex</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"(click)="goTolisteopex()">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Opex</span>
+        </a>
+      </li>
+    
+    
+    
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
+        aria-controls="collapseForm">
+        <i class="fab fa-fw fa-wpforms"></i>
+        <span>Bon de Commande</span>
+      </a>
+      <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">Bon de Commande</h6>
+          <a class="collapse-item" (click)="goTolistbondecommande()">capex</a>
+          <a class="collapse-item" (click)="goTolistbondecommandeo()">Opex</a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
+        aria-expanded="true" aria-controls="collapseBootstrap">
+        <i class="fab fa-fw fa-wpforms"></i>
+        <span>Factures</span>
+      </a>
+      <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">Factures</h6>
+          <a class="collapse-item" (click)="goTolistfactures()"> Capex</a>
+          <a class="collapse-item" (click)="goTolistfactureso()">Opex</a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item" [hidden]="verif">
+      <a class="nav-link"(click)="goTolisteutilisateur() ">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Utilisateurs</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"(click)="analyse() ">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Analyse</span>
+      </a>
+    </li>
+      <hr class="sidebar-divider">
+      <hr class="sidebar-divider">
+      <div class="version" id="version-ruangadmin"></div>
+    </ul>
+    <!-- Sidebar -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <!-- TopBar -->
+        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
+         
+          <ul class="navbar-nav ml-auto">
+           
+          
+          
+         
+            <div class="topbar-divider d-none d-sm-block"></div>
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <img class="img-profile rounded-circle" src="assets/img/boy.png" style="max-width: 60px">
+                <span class="ml-2 d-none d-lg-inline text-white small">{{nom}}</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal" (click)="logout()">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <!-- Topbar -->
+
+        <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Liste Factures Opex</h1>
+            <button mat-raised-button (click)="exportexcel()">Exporte</button>
+
+          </div>
+
+          <div class="row mb-3">
+            <!-- Earnings (Monthly) Card Example -->
+            
+            <!-- Earnings (Annual) Card Example -->
+           
+           
+            <!-- New User Card Example -->
+           
+            <!-- Pending Requests Card Example -->
+           
+            <!-- Area Chart -->
+          
+              
+               
+                <div class="card-body">
+                  <div class="card-body">
+                    <div class="search-container">
+                    
+                        <button mat-raised-button (click)="openBande()"style="margin-left: 1100px;" [hidden]="v" >Ajouter</button>
+
+
+                      
+                    </div>
+                    <input style="display: flex;
+                    justify-content: flex-start;
+                    margin-top: 20px;
+                    margin-left: 20px;
+                    border: 1px;
+                    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    background-color: #b4b4bd;  " type="text" [(ngModel)]="searchTerm" (input)="filterData()" placeholder="Recherche">
+                       <br> <br><br>       
+
+                       <br> <br><br>       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <table class="table align-items-center table-flush"  id="excel-table"  >
+                  <thead class="thead-light">
+                  <tr>
+                    
+                    <th scope="col">ref</th>
+                    <th scope="col">realise</th>
+                    <th scope="col">opex</th>
+                    <th scope="col">bon de Commande</th>
+
+                    <th scope="col">fournisseur</th>
+                   
+                
+                    <th scope="col">A</th>
+
+                    
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    
+                    
+                  </tr>
+                </tfoot>
+             <tbody>
+               
+                  <tr *ngFor="let i of Factureso">
+                    <td>{{i?.ref}}</td>
+                    <td>{{i?.realise}}</td>
+                    <td>{{i?.opex?.libelleProjet}}</td>
+                    <td>{{i?.bondecommandeo?.ref}}</td>
+                    <td>{{i?.fournisseur}}</td>
+                    <td>
+                      <button mat-icon-button color="primary" (click)="toupdate(i.id)" [hidden]="v" ><span class="material-symbols-outlined" >
+                        <mat-icon>edit</mat-icon><br>
+                        
+                   </span></button>
+                   <button  mat-icon-button color="warn" (click)="openDeleteProductDialog(i.id)" [hidden]="v" ><span class="material-symbols-outlined" >
+                    <mat-icon>delete</mat-icon>
+                     </span>
+                 </button>
+                 <ng-template #deleteCapex class="f">
+                   <button mat-icon-button class="btn btn-danger" (click)="closeDialog()"><mat-icon>close</mat-icon></button>
+
+                   <h2  class="f" style="text-align: center;">est-ce-que vous etes sure de supprimer cette Bonde<br>si elle ya une facture de cette bon <br> elle va supprimer aussi ! !</h2>
+                   <table class="table container" #pdfTable>
+                     <th scope="col">Libellée Projet</th>
+                     <td>{{fact[0]?.libelleProjet}}</td>
+                     <button  class="btn btn-danger" style="margin-left: 35%;"  (click)="delete(fact[0].id)">Oui</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                     <button class="btn btn-secondary"  (click)="closeDialog()">Non</button>
+
+                   </table>
+
+                 </ng-template>
+                 <button mat-raised-button (click)="show(i.id)" > Facturer</button>
+                 <ng-template #showFacture>
+                  <button mat-icon-button class="btn btn-danger" (click)="closeDialog()"><mat-icon>close</mat-icon></button>
+
+                <table class="table align-items-center table-flush  c"  id="excel-table" #pdfTable  >
+                  <thead>
+                  <tr>
+                    
+                    <th scope="col">ref</th>
+                    <th scope="col">realise</th>
+                    <th scope="col">opex</th>
+                    <th scope="col">bon de Commande</th>
+
+                    <th scope="col">fournisseur</th>
+                   
+                
+
+                    
+                  </tr>
+                </thead>
+                <tbody>
+  <tr *ngFor="let i of fact ">
+    <td>{{i?.ref}}</td>
+    <td>{{i?.realise}}</td>
+    <td>{{i?.opex?.libelleProjet}}</td>
+    <td>{{i?.bondecommandeo?.ref}}</td>
+    <td>{{i?.fournisseur}}</td>
+    </tr>
+    </tbody>
+</table>
+                    <button style="margin-left:30%" class="btn btn-primary" (click)="generatePDF()">Export To PDF</button>
+
+</ng-template>
+                 
+                   </td>
+                  </tr>
+                </tbody>
+                
+                </table>
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+</mat-paginator>
+                
+              
+                  <div class="chart-area">
+                    <canvas id="myAreaChart"></canvas>
+                  </div>
+                </div>
+             
+            
+            </div>
+          <!-- Modal Logout -->
+          <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Are you sure you want to logout?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
+                  <a href="login.html" class="btn btn-primary">Logout</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!---Container Fluid-->
+      </div>
+      <!-- Footer -->
+    
+      <!-- Footer -->
+    </div>
+  </div>
+
+  <!-- Scroll to top -->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  
+
+
+
